@@ -1,0 +1,348 @@
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../paper-radio-button/paper-radio-button.html">
+<link rel="import" href="../paper-radio-group/paper-radio-group.html">
+<link rel="import" href="../paper-toggle-button/paper-toggle-button.html">
+<link rel="import" href="../paper-slider/paper-slider.html">
+<link rel="import" href="../paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="form-field.html">
+  
+<polymer-element name="input-field" extends="form-field" kind="input" layout horizontal center noscript>
+<template>
+  <paper-input 
+    flex 
+    floatinglabel 
+    label="{{label}}"
+    invalid="{{invalidated}}"
+    inputValue="{{editValue}}"
+    value="{{value}}"
+    error="{{errorText}}"
+    validateImmediately="false"
+  ></paper-input>
+</template>
+<script>
+  Polymer({
+    editValueChanged: function() {
+      this.fire('validate-form-field');
+    }
+  });
+</script>
+</polymer-element>
+
+<polymer-element name="multiline-input-field" extends="form-field" kind="input" layout horizontal center noscript>
+<template>
+  <paper-input 
+    flex 
+    floatinglabel 
+    multiline
+    label="{{label}}"
+    invalid="{{invalidated}}"
+    inputValue="{{editValue}}"
+    value="{{value}}"
+    error="{{errorText}}"
+    validateImmediately="false"
+  ></paper-input>
+</template>
+<script>
+  Polymer({
+    editValueChanged: function() {
+      this.fire('validate-form-field');
+    }
+  });
+</script>
+</polymer-element>
+
+
+<polymer-element name="number-field" extends="form-field" kind="input" layout horizontal center noscript>
+<template>
+  <paper-input 
+    flex 
+    floatinglabel
+    type="number"
+    label="{{label}}"
+    invalid="{{invalidated}}"
+    inputValue="{{editValue}}"
+    value="{{value}}"
+    error="{{errorText}}"
+    validateImmediately="false"
+  ></paper-input>
+</template>
+<script>
+  Polymer({
+    editValueChanged: function() {
+      this.fire('validate-form-field');
+    }
+  });
+</script>
+</polymer-element>
+
+<polymer-element name="date-field" extends="form-field" kind="input" layout horizontal center noscript>
+<template>
+  <paper-input 
+    flex 
+    floatinglabel 
+    type="date"
+    label="{{label}}"
+    invalid="{{invalidated}}"
+    inputValue="{{editValue}}"
+    value="{{value}}"
+    error="{{errorText}}"
+    validateImmediately="false"
+  ></paper-input>
+</template>
+<script>
+  Polymer({
+    editValueChanged: function() {
+      this.fire('validate-form-field');
+    }
+  });
+</script>
+</polymer-element>
+
+<polymer-element name="multi-input-field" extends="form-field" kind="input" layout vertical end>
+<template>
+  <style>
+    paper-input {
+      width: 100%;
+    }
+  </style>
+  <paper-input 
+    floatinglabel 
+    label="{{label}}"
+    invalid="{{invalidated}}"
+    xinputValue="{{editValue}}"
+    value="{{line1}}"
+    error="{{errorText}}"
+    validateImmediately="false"
+  ></paper-input>
+  <paper-input 
+    invalid="{{invalidated}}"
+    xinputValue="{{editValue}}"
+    value="{{line2}}"
+    error="{{errorText}}"
+    validateImmediately="false"
+  ></paper-input>
+  <!-- <paper-button id="btn" on-tap="{{addLineAction}}">Add Line</paper-button> -->
+</template>
+<script>
+  Polymer({
+    computed: {
+      value: '[line1, line2]'
+    },
+    editValueChanged: function() {
+      this.fire('validate-form-field');
+    },
+    addLineAction: function() {
+    }
+  });
+</script>
+</polymer-element>
+
+<polymer-element name="checkbox-field" extends="form-field" kind="checkbox" noscript>
+<template>
+  <paper-checkbox style="margin: 10px 0.5em;" label="{{label}}" checked="{{value}}"></paper-checkbox>
+</template>
+</polymer-element>
+
+<polymer-element name="toggle-field" extends="form-field" kind="toggle" noscript>
+<template>
+  <style>
+    .floated-label {
+      font-size: 0.75em;
+      padding: 1em 0;
+      white-space: nowrap;
+      color: #757575;
+    }
+    .label-text {
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .container {
+      font-size: 0.75em;
+      color: #757575;
+    }
+  </style>
+  <div class="floated-label" invisible?="{{value === undefined}}">
+    <span class="label-text">{{label}}</span>
+  </div>
+  <paper-toggle-button checked="{{value}}"></paper-toggle-button>
+</template>
+</polymer-element>
+
+<polymer-element name="slider-field" extends="form-field" kind="slider" attributes="minLabel maxLabel" noscript>
+<template>
+  <style>
+    .floated-label {
+      font-size: 0.75em;
+      padding: 1em 0;
+      white-space: nowrap;
+      color: #757575;
+    }
+    .label-text {
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .container {
+      font-size: 0.75em;
+      color: #757575;
+    }
+  </style>
+  <div class="floated-label" invisible?="{{value === undefined}}">
+    <span class="label-text">{{label}}</span>
+  </div>
+  <div class="container" layout horizontal center>
+    {{minLabel}}
+    <paper-slider flex value="{{value}}"></paper-slider>
+    {{maxLabel}}
+  </div>
+</template>
+</polymer-element>
+
+<polymer-element name="radio-field" extends="form-field" kind="radio-group" noscript>
+<template>
+  <style>
+    .floated-label {
+      font-size: 0.75em;
+      padding: 1em 0;
+      white-space: nowrap;
+      color: #757575;
+    }
+    .label-text {
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    ::content > paper-radio-button {
+      font-size: 0.75em;
+      padding: 1em;
+    }
+  </style>
+  <div class="floated-label" invisible?="{{value === undefined}}">
+    <span class="label-text">{{label}}</span>
+  </div>
+  <paper-radio-group selected="{{value}}" layout vertical>
+    <content></content>
+  </paper-radio-group>
+</template>
+</polymer-element>
+
+<polymer-element name="dropdown-field" extends="form-field" kind="dropdown" noscript>
+<template>
+  <style>
+    :host {
+      padding: 0.75em 0;
+    }
+    [invisible] {
+      visibility: hidden;
+    }
+    .floated-label {
+      font-size: 0.75em;
+      white-space: nowrap;
+      color: #757575;
+    }
+    .label-text {
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    paper-dropdown-menu {
+      width: 100%;
+      background-color: transparent;
+      padding: 0;
+    }
+    paper-dropdown-menu::shadow #dropdown {
+      min-width: 100%;
+    }
+  </style>
+  <div class="floated-label" invisible?="{{value === undefined}}">
+    <span class="label-text">{{label}}</span>
+  </div>
+  <paper-dropdown-menu label="{{label}}" selected="{{value}}" valueattr="textContent">
+    <content></content>
+  </paper-dropdown-menu>
+</template>
+</polymer-element>
+
+<polymer-element name="ssn-field" extends="form-field" kind="ssn" noscript on-keypress="{{keyPress}}">
+<template>
+  <style>
+    :host {
+      display: block;
+      padding: 0.75em 0;
+    }
+    [invisible] {
+      visibility: hidden;
+    }
+    .floated-label {
+      font-size: 0.75em;
+      white-space: nowrap;
+      color: #757575;
+    }
+    .label-text {
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    paper-input {
+      margin: 0 0.5em;
+      padding: 0;
+    }
+    paper-input:first-child {
+      margin: 0 0.5em 0 0;
+    }
+    paper-input:last-child {
+      margin: 0 0 0 0.5em;
+    }
+    paper-input::shadow input {
+      text-align: center;
+    }
+    [two-digits] {
+      width: 1.75em;
+    }
+    [three-digits] {
+      width: 2.25em;
+    }
+    [four-digits] {
+      width: 2.75em;
+    }
+  </style>
+  <div class="floated-label" invisible?="{{value === '--'}}">
+    <span class="label-text">{{label}}</span>
+  </div>
+  <div layout horizontal center>
+    <paper-input three-digits maxlength="3" value="{{partA}}" label="SSN"></paper-input> &ndash; <paper-input two-digits maxlength="2" value="{{partB}}"></paper-input> &ndash; <paper-input four-digits maxlength="4" value="{{partC}}"></paper-input>  
+  </div>
+</template>
+<script>
+  Polymer({
+    computed: {
+      value: 'concat(partA, partB, partC)'
+    },
+    concat: function(a, b, c) {
+      return a + '-' + b + '-' + c;
+    },
+    keyPress: function(e) {
+      var c = String.fromCharCode(e.charCode);
+      if (!c.match(/\d/)) {
+        e.preventDefault();
+      }
+    }
+  });
+</script>
+</polymer-element>

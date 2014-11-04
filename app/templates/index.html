@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>unquote</title>
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/base/jquery-ui.css" type="text/css" media="all" />
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+  <script src="/static/components/platform/platform.js">
+  </script>
+
+
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="import" href="/static/components/paper-elements/paper-elements.html">
+  <link rel="import" href="/static/components/font-roboto/roboto.html">
+  <link rel="import"
+    href="/static/components/core-header-panel/core-header-panel.html">
+  <link rel="import"
+    href="/Users/swubb/Business/code/finished/static/components/core-toolbar/core-toolbar.html">
+  <link rel="import"
+    href="static/components/paper-tabs/paper-tabs.html">
+
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'></script>
+<script src='/static/jquery.autosize.js'></script>
+<script>
+  $(function(){
+    $('.normal').autosize();
+    $('.animated').autosize();
+  });
+</script>
+
+</head>
+
+<body>
+
+
+  <core-header-panel>
+
+    <core-toolbar>
+      <img src="static/images/readably.png" width=300px>
+      <!-- <paper-tabs id="tabs" selected="all" self-end>
+        <paper-tab name="all">All</paper-tab>
+        <paper-tab name="favorites">Favorites</paper-tab>
+        <paper-tab name="demo">Demo</paper-tab>
+        <paper-tab name="info">Info</paper-tab>
+      </paper-tabs> -->
+    </core-toolbar>
+
+<div column>
+<div segment>
+
+
+<img src="static/images/perscheck.png" width=200px>
+<form method="post" action="{{ url_for('hello') }}">
+
+
+        <label for="text">Plak hier je bericht:</label>
+<textarea class='animated' name="text"></textarea>
+
+<!-- <p><label for=fader>Samenvatting</label>
+<input type=range min=0 max=100 value=50 id=fader step=1 onchange="outputUpdate(value)">
+<output for=fader id=volume>50</output> procent
+<script>
+function outputUpdate(vol) {
+document.querySelector('#volume').value = vol;
+}
+</script> -->
+</p>
+<p>
+        <input type="submit" id="my-button" value="Analyseer!"/>
+
+</P>
+
+
+</form>
+
+
+
+</div>
+</div>
+
+
+
+</body>
+
+</html>
