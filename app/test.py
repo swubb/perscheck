@@ -36,7 +36,7 @@ maxpar=10
 
 #Load frequency list
 
-ins = open( APP_STATIC+"/vocab_cs_1k", "r" )
+ins = open("vocab_cs_1k", "r" )
 array = []
 for line in ins:
    fields = line.split( )
