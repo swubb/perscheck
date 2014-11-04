@@ -107,7 +107,7 @@ def form():
 
 # about
 @app.route('/about')
-def form():
+def about():
     return render_template('about.html')
 
 # Define a route for the action of the form, for example '/hello/'
