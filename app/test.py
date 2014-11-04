@@ -5,9 +5,9 @@ from flask import Flask, render_template, request, url_for
 import os
 import nltk
 import re
-#import matplotlib as mpl
-#import matplotlib.pyplot as plt
-#import seaborn as sns
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import seaborn as sns
 import string
 import random
 

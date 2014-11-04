@@ -4,9 +4,14 @@ MarkupSafe==0.23
 Werkzeug==0.9.6
 distribute==0.6.49
 itsdangerous==0.24
+matplotlib==1.1.0
 nltk==3.0.0
 numpy==1.7.0
-matplotlib==1.1.0
-pandas
-seaborn
+pandas==0.15.0
+python-dateutil==2.2
+pytz==2014.9
+scipy==0.11.0
+seaborn==0.4.0
+six==1.8.0
+wsgiref==0.1.2
 
