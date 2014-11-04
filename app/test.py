@@ -155,7 +155,6 @@ def hello():
    # drawGraph(slen.values(), randstring1, 'zinslengte')
     typetoken=getTTRatio(allwords)
     highfreq=getHighfreq(allwords)
-    highfreq=0
     for w in allwords:
       wlen[w]=len(w)
     #drawGraph(wlen.values(), randstring2, 'woordlengte')
