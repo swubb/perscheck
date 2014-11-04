@@ -12,7 +12,6 @@ import string
 import random
 
 #use local nltk_data
-nltk.data.path.append('./nltk_data/')
 nltk.data.path.append('app/nltk_data/')
 
 
@@ -152,12 +151,12 @@ def hello():
 
     randstring1=id_generator()
     randstring2=id_generator()
-   # drawGraph(slen.values(), randstring1, 'zinslengte')
+    drawGraph(slen.values(), randstring1, 'zinslengte')
     typetoken=getTTRatio(allwords)
     highfreq=getHighfreq(allwords)
     for w in allwords:
       wlen[w]=len(w)
-    #drawGraph(wlen.values(), randstring2, 'woordlengte')
+    drawGraph(wlen.values(), randstring2, 'woordlengte')
 
     textlength=len(text)
     allsentences = splitSentences(text)
