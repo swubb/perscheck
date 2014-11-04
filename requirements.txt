@@ -5,8 +5,6 @@ Werkzeug==0.9.6
 distribute==0.6.49
 itsdangerous==0.24
 nltk==3.0.0
-numpy==1.9.1
-scipy
-wsgiref==0.1.2
+
 
 

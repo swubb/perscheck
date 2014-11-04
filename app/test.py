@@ -5,8 +5,8 @@ from flask import Flask, render_template, request, url_for
 import os
 import nltk
 import re
-import matplotlib.pyplot as plt
-import seaborn as sns
+#import matplotlib.pyplot as plt
+#import seaborn as sns
 import string
 import random
 
@@ -146,12 +146,12 @@ def hello():
 
     randstring1=id_generator()
     randstring2=id_generator()
-    drawGraph(slen.values(), randstring1, 'zinslengte')
+    #drawGraph(slen.values(), randstring1, 'zinslengte')
     typetoken=getTTRatio(allwords)
     highfreq=getHighfreq(allwords)
     for w in allwords:
       wlen[w]=len(w)
-    drawGraph(wlen.values(), randstring2, 'woordlengte')
+    #drawGraph(wlen.values(), randstring2, 'woordlengte')
 
     textlength=len(text)
     allsentences = splitSentences(text)
