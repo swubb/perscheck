@@ -34,12 +34,12 @@ maxpar=10
 
 #Load frequency list
 
-ins = open( "static/vocab_cs_1k", "r" )
-array = []
-for line in ins:
-   fields = line.split( )
-   array.append(fields[0])
-ins.close()
+# ins = open( "static/vocab_cs_1k", "r" )
+# array = []
+# for line in ins:
+#    fields = line.split( )
+#    array.append(fields[0])
+# ins.close()
 
 
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
@@ -151,7 +151,8 @@ def hello():
     randstring2=id_generator()
    # drawGraph(slen.values(), randstring1, 'zinslengte')
     typetoken=getTTRatio(allwords)
-    highfreq=getHighfreq(allwords)
+    #highfreq=getHighfreq(allwords)
+    highfreq=0
     for w in allwords:
       wlen[w]=len(w)
     #drawGraph(wlen.values(), randstring2, 'woordlengte')
