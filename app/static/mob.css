@@ -1,0 +1,137 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1.125em/1.38 Verdana;
+  color: rgb(74, 74, 74);
+}
+
+.container {
+  float: left;
+}
+
+.container .container {
+  position: relative;
+  margin-left: -6.32217%;
+}
+
+.container .image {
+  position: relative;
+  clear: both;
+  margin-left: 7.67991%;
+}
+
+.image {
+  display: block;
+  float: left;
+  height: auto;
+  overflow: hidden;
+}
+
+.text {
+  float: left;
+  padding: 10px;
+  font-weight: 400;
+  line-height: 1.38;
+}
+
+.container-1 {
+  clear: both;
+  width: 936px;
+  height: 506px;
+  margin: 105px 0 0 6%;
+  background-color: rgba(255, 255, 255, 0);
+  overflow: hidden;
+}
+
+.container-2 {
+  z-index: 2;
+  width: 40.6015037593%;
+  height: 259px;
+  margin-top: -103px;
+  overflow: hidden;
+}
+
+.container-3 {
+  clear: both;
+  z-index: 5;
+  width: 39.2051557465%;
+  height: 185px;
+  margin-top: -20px;
+}
+
+.image-1 {
+  width: 198px;
+  margin: 11px 0 0 1.66667%;
+}
+
+.image-2 {
+  z-index: 6;
+  width: 47px;
+  margin-top: -259px;
+}
+
+.image-3 {
+  z-index: 7;
+  width: 52px;
+  margin-top: -185px;
+}
+
+.text-1 {
+  display: inline-block;
+  background-color: rgb(74, 74, 74);
+  font-size: 1.111em;
+  color: rgb(39, 235, 241);
+}
+
+.text-2 {
+  clear: both;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1em;
+  color: rgb(74, 74, 74);
+}
+
+.text-3 {
+  display: inline-block;
+  background-color: rgb(74, 74, 74);
+  font-size: 1.111em;
+  color: rgb(0, 229, 152);
+}
+
+.text-4 {
+  clear: both;
+  width: 99.7367871318%;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1em;
+  color: rgb(74, 74, 74);
+}
+
+@media(max-width: 800px) {
+  .container .container {
+    position: relative;
+  }
+
+  .container .image {
+    position: relative;
+    height: auto;
+  }
+
+  .image {
+    height: auto;
+  }
+
+  .container .container-2 {
+    z-index: 2;
+  }
+
+  .container .container-3 {
+    z-index: 5;
+  }
+
+  .container .image-2 {
+    z-index: 6;
+  }
+
+  .container .image-3 {
+    z-index: 7;
+  }
+}

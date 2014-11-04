@@ -104,6 +104,12 @@ def form():
     return render_template('index.html')
 
 
+
+# about
+@app.route('/about')
+def form():
+    return render_template('about.html')
+
 # Define a route for the action of the form, for example '/hello/'
 # We are also defining which type of requests this route is
 # accepting: POST requests in this case
