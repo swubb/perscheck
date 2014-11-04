@@ -95,7 +95,7 @@ def drawGraph(data,randstring,xlabel):
   plt.ylabel('aantal')
   plt.xlabel(xlabel)
   plt.xlim(xmin=0)
-  plt.savefig('static/images/generated/'+randstring+'.png')
+  plt.savefig('app/static/images/generated/'+randstring+'.png')
   plt.clf()
 
 # Define a route for the default URL, which loads the form
