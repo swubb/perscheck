@@ -5,10 +5,17 @@ from flask import Flask, render_template, request, url_for
 import os
 import nltk
 import re
+import numpy as np
+from numpy.random import randn
+#import matplotlib as mpl
 #import matplotlib.pyplot as plt
 #import seaborn as sns
 import string
 import random
+
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))   # refers to application_top
+APP_STATIC = os.path.join(APP_ROOT, 'static')
+
 
 #Initialize the Flask application
 app = Flask(__name__)
@@ -31,12 +38,12 @@ maxpar=10
 
 #Load frequency list
 
-# ins = open( "vocab_cs_1k", "r" )
-# array = []
-# for line in ins:
-#    fields = line.split( )
-#    array.append(fields[0])
-# ins.close()
+ins = open( APP_STATIC+"/vocab_cs_1k", "r" )
+array = []
+for line in ins:
+   fields = line.split( )
+   array.append(fields[0])
+ins.close()
 
 
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
@@ -146,7 +153,7 @@ def hello():
 
     randstring1=id_generator()
     randstring2=id_generator()
-    #drawGraph(slen.values(), randstring1, 'zinslengte')
+   # drawGraph(slen.values(), randstring1, 'zinslengte')
     typetoken=getTTRatio(allwords)
     highfreq=getHighfreq(allwords)
     for w in allwords:
@@ -158,7 +165,11 @@ def hello():
     return render_template('form_action.html', text=parsent, slen=slen, sentname=randstring1, wordname=randstring2, ttr=typetoken, hfr=highfreq, textlength=textlength, amountwords=len(allwords),amountsentences=len(allsentences), hline=hline,maxsent=maxsent, parcheck=parcheck, sencheck=sencheck)
 
 # Run the app :)
-if __name__ == "__main__":
-  port = int(os.environ.get("PORT", 5000))
-  app.run(host='0.0.0.0', port=port)
-  
+if __name__ == '__main__':
+    
+
+    app.debug = True
+    app.run(
+        host="0.0.0.0",
+        port=int("5000")
+  )
