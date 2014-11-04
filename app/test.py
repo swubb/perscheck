@@ -13,6 +13,7 @@ import random
 
 #use local nltk_data
 nltk.data.path.append('./nltk_data/')
+nltk.data.path.append('app/nltk_data/')
 
 
 #Initialize the Flask application
