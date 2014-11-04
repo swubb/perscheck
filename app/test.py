@@ -11,8 +11,8 @@ import re
 import string
 import random
 
-APP_ROOT = os.path.dirname(os.path.abspath(__file__))   # refers to application_top
-APP_STATIC = os.path.join(APP_ROOT, 'static')
+APP_ROOT = os.path.realpath(os.path.dirname(__file__))
+vocab_file = os.path.join(APP_ROOT, 'static', 'vocab_cs_1k')
 
 
 #Initialize the Flask application
@@ -36,7 +36,7 @@ maxpar=10
 
 #Load frequency list
 
-ins = open( "static/vocab_cs_1k", "r" )
+ins = open( vocab_file, "r" )
 array = []
 for line in ins:
    fields = line.split( )
