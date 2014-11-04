@@ -31,12 +31,12 @@ maxpar=10
 
 #Load frequency list
 
-ins = open( "vocab_cs_1k", "r" )
-array = []
-for line in ins:
-   fields = line.split( )
-   array.append(fields[0])
-ins.close()
+# ins = open( "vocab_cs_1k", "r" )
+# array = []
+# for line in ins:
+#    fields = line.split( )
+#    array.append(fields[0])
+# ins.close()
 
 
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
