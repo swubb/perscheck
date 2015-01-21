@@ -90,9 +90,9 @@ def getTTRatio(words):
 def drawGraph(data,randstring,xlabel):
   sns.set_style("dark")
   sns.set_context(rc={"figure.figsize": (8, 5)})
-  sns.kdeplot(data, shade=True)
-  #sns.distplot(data,kde_kws={"color": "seagreen", "lw": 3, "label": "KDE"},
-   #          );
+
+  sns.distplot(data,kde_kws={"color": "seagreen", "lw": 3, "label": "KDE"},
+           );
   plt.ylabel('aantal')
   plt.xlabel(xlabel)
   #plt.xlim(xmin=0)
