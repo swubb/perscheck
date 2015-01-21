@@ -36,7 +36,7 @@ maxpar=10
 
 #Load frequency list
 
-ins = open( "app/static/vocab_cs_1k", "r" )
+ins = open( "app/static/vocab_cs_3k", "r" )
 array = []
 for line in ins:
    fields = line.split( )
@@ -91,7 +91,7 @@ def drawGraph(data,randstring,xlabel):
   sns.set_style("dark")
   sns.set_context(rc={"figure.figsize": (8, 5)})
   sns.distplot(data,kde_kws={"color": "seagreen", "lw": 3, "label": "KDE"},
-             hist_kws={"color": "teal"});
+             );
   plt.ylabel('aantal')
   plt.xlabel(xlabel)
   plt.xlim(xmin=0)
