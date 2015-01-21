@@ -94,6 +94,45 @@
  {% endif %}
 </div>
 
+
+<div class="mytable" >
+                <table >
+                    <tr>
+                        <td>
+                           
+                        </td>
+                        <td >
+                            Zinslengte
+                        </td>
+                        <td>
+                            Aantal zinnen
+                        </td>
+                    </tr>
+                    <tr>
+                    <td>
+                     Lead
+                    </td>
+
+                    <td>
+                    {% if sencheck[0]%}
+                      <core-icon icon="thumb-up"></core-icon>
+                    {% else %}
+                      <core-icon icon="thumb-down"></core-icon>
+                    {% endif %}
+                    </td>
+
+                    <td>
+                      {% if parcheck[0]%}
+                        <core-icon icon="thumb-up"></core-icon>
+                      {% else %}
+                        <core-icon icon="thumb-down"></core-icon>
+                      {% endif %}
+                      </td>
+
+                    </tr>
+                  </table>
+</div>
+
 <div result contenteditable='true' align=left>
 
 
@@ -108,14 +147,7 @@
 
     {% endfor %}
 
-<div>
- Aantal zinnen lead:
- {% if parcheck[0]%}
-   <core-icon icon="thumb-up"></core-icon>
- {% else %}
-  <core-icon icon="thumb-down"></core-icon>
- {% endif %}
-</div>
+
 
 
 </div>
