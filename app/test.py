@@ -90,8 +90,10 @@ def getTTRatio(words):
 def drawGraph(data,randstring,xlabel):
   sns.set_style("dark")
   sns.set_context(rc={"figure.figsize": (8, 5)})
-  sns.distplot(data,kde_kws={"color": "seagreen", "lw": 3, "label": "KDE"},
-             );
+  c1, c2, c3 = sns.color_palette("Set1", 3)
+  sns.kdeplot(ddata, shade=True, color=c2)
+  #sns.distplot(data,kde_kws={"color": "seagreen", "lw": 3, "label": "KDE"},
+   #          );
   plt.ylabel('aantal')
   plt.xlabel(xlabel)
   plt.xlim(xmin=0)
@@ -157,12 +159,12 @@ def hello():
 
     randstring1=id_generator()
     randstring2=id_generator()
-    drawGraph(slen.values(), randstring1, 'zinslengte x')
+    drawGraph(slen.values(), randstring1, 'zinslengte')
     typetoken=getTTRatio(allwords)
     highfreq=getHighfreq(allwords)
     for w in allwords:
       wlen[w]=len(w)
-    drawGraph(wlen.values(), randstring2, 'woordlengte x')
+    drawGraph(wlen.values(), randstring2, 'woordlengte')
 
     textlength=len(text)
     allsentences = splitSentences(text)
