@@ -75,10 +75,27 @@
 <img src="/static/images/perscheck.png" width=250px>
 
 <p>
+<b>Lead</b>
+<div>
+ Zinslengte lead:
+ {% if sencheck[0]%}
+   <core-icon icon="thumb-up"></core-icon>
+ {% else %}
+  <core-icon icon="thumb-down"></core-icon>
+ {% endif %}
+</div>
 
+<div>
+ Aantal zinnen lead:
+ {% if parcheck[0]%}
+   <core-icon icon="thumb-up"></core-icon>
+ {% else %}
+  <core-icon icon="thumb-down"></core-icon>
+ {% endif %}
+</div>
 
 <div result contenteditable='true' align=left>
-<b>Lead</b>
+
 
 
   <p>
