@@ -122,7 +122,7 @@ def hello():
     parsent=[]
     allwords=[]
     text=request.form['text']
-    paragraphs = [s.strip() for s in text.splitlines()]
+    paragraphs = [s.strip() for s in text.split("\n\n")]
     count=0
     hline=""
 
