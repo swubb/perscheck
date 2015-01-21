@@ -78,9 +78,9 @@
 
 
 <div result contenteditable='true' align=left>
-<b>Lead lengte: </b>
+<b>Lead</b>
 
-<div>
+
   <p>
   {% for sent in lead %}
     {% if slen[sent] > maxsent %}
@@ -90,14 +90,20 @@
     {% endif %}
 
     {% endfor %}
+
+<div>
+ Aantal zinnen lead:
+ {% if parcheck[0]%}
+   <core-icon icon="thumb-up"></core-icon>
+ {% else %}
+  <core-icon icon="thumb-down"></core-icon>
+ {% endif %}
 </div>
 
 
-
-
-
 </div>
-
+<br>
+<br>
 <font size=small>
 
 
