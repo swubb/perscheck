@@ -91,7 +91,7 @@ def drawGraph(data,randstring,xlabel):
   sns.set_style("dark")
   sns.set_context(rc={"figure.figsize": (8, 5)})
   c1, c2, c3 = sns.color_palette("Set1", 3)
-  sns.kdeplot(ddata, shade=True, color=c2)
+  sns.kdeplot(data, shade=True, color=c2)
   #sns.distplot(data,kde_kws={"color": "seagreen", "lw": 3, "label": "KDE"},
    #          );
   plt.ylabel('aantal')
