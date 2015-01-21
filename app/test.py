@@ -130,29 +130,29 @@ def hello():
       hline=paragraphs.pop(0)
 
     for p in paragraphs:
+      if len(p) > 3:
+        #figure out how many sentences are allowed per par.
+        if count==0:
+          allowed=maxlead
+        else:
+          allowed=maxpar
 
-      #figure out how many sentences are allowed per par.
-      if count==0:
-        allowed=maxlead
-      else:
-        allowed=maxpar
-
-      sencheck.append(True)
-      sentences = splitSentences(p)
-      if len(sentences) > allowed:
-        parcheck.append(False)
-      else:
-        parcheck.append(True)
-      for s in sentences:
-          words = tokenize(s)
-          slen[s]=len(words)
-          if slen[s] > maxsent:
-            sencheck[count]=False
+        sencheck.append(True)
+        sentences = splitSentences(p)
+        if len(sentences) > allowed:
+          parcheck.append(False)
+        else:
+          parcheck.append(True)
+        for s in sentences:
+            words = tokenize(s)
+            slen[s]=len(words)
+            if slen[s] > maxsent:
+              sencheck[count]=False
 
 
-          allwords.extend(words)
-      parsent.append(sentences)
-      count+=1
+            allwords.extend(words)
+        parsent.append(sentences)
+        count+=1
 
 
     randstring1=id_generator()
