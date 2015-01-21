@@ -7,7 +7,7 @@
 
 <head>
 
-  <title>unquote</title>
+  <title>Perscheck</title>
 
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/base/jquery-ui.css" type="text/css" media="all" />
@@ -77,13 +77,37 @@
 <p>
 
 
+<div result contenteditable='true' align=left>
+<b>Lead lengte: </b>
+
+<div>
+  <p>
+  {% for sent in lead %}
+    {% if slen[sent] > maxsent %}
+      <font color=red>{{sent}} </font>
+    {% else %}
+      {{sent}}
+    {% endif %}
+
+    {% endfor %}
+</div>
+
+
+
+
+
+</div>
+
 <font size=small>
+
+
+
 
 <div class="mytable" width=70%>
               <table >
                     <tr><td colspan=2>Statistieken</td></tr>
               <tr><td>Lengte artikel:</td> <td>{{textlength}} karakters / {{amountwords}} woorden / {{amountsentences}} zinnen</td></tr>
-              <tr><td> Ratio hoog frequente woorden (top 1000): </td>  <td>{{'%0.2f'| format(hfr|float)}}</td></tr>
+              <tr><td> Ratio hoog frequente woorden (top 3000): </td>  <td>{{'%0.2f'| format(hfr|float)}}</td></tr>
               <tr><td> type token ratio (cohesie):</td>  <td> {{'%0.2f'| format(ttr|float)}}</td></tr>
               </table>
 </div>

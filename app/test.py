@@ -167,7 +167,7 @@ def hello():
 
     textlength=len(text)
     allsentences = splitSentences(text)
-    return render_template('form_action.html', text=parsent, slen=slen, sentname=randstring1, wordname=randstring2, ttr=typetoken, hfr=highfreq, textlength=textlength, amountwords=len(allwords),amountsentences=len(allsentences), hline=hline,maxsent=maxsent, parcheck=parcheck, sencheck=sencheck)
+    return render_template('form_action.html', lead=parsent[0], text=parsent, slen=slen, sentname=randstring1, wordname=randstring2, ttr=typetoken, hfr=highfreq, textlength=textlength, amountwords=len(allwords),amountsentences=len(allsentences), hline=hline,maxsent=maxsent, parcheck=parcheck, sencheck=sencheck)
 
 # Run the app :)
 if __name__ == '__main__':
