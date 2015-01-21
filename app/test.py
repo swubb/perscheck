@@ -91,7 +91,7 @@ def drawGraph(data,randstring,xlabel):
   sns.set_style("dark")
   sns.set_context(rc={"figure.figsize": (8, 5)})
 
-  sns.distplot(data,kde_kws={"color": "seagreen", "lw": 3, "label": "ANP maatstaf"},
+  sns.distplot(data,kde_kws={"color": "crimson", "lw": 3, "label": "Dit bericht"},
            );
   plt.ylabel('aantal')
   plt.xlabel(xlabel)
