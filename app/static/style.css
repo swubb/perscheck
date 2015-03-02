@@ -10,6 +10,8 @@ html,body {
 h2   {color: #1faff2}
 
 
+
+
 core-icon[icon="thumb-up"] {
   color: #63D457;
   width: 28px;
@@ -530,4 +532,10 @@ p:hover span{
 
 .pace.pace-inactive {
   display: none;
+}
+
+
+a:link {
+    text-decoration: none;
+    color: #0099FF
 }

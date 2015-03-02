@@ -184,13 +184,11 @@ def hello():
     for w in allwords:
       if '<' not in w:
         wlen[w]=len(w)
+
     drawGraph(wlen.values(), randstring2, 'woordlengte')
 
     textlength=len(text)
     allsentences = splitSentences(text)
-
-
-
 
     return render_template('form_action.html', lead=parsent[0], text=parsent, slen=slen, sentname=randstring1, wordname=randstring2, ttr=typetoken, hfr=highfreq, textlength=textlength, amountwords=len(allwords),amountsentences=len(allsentences), hline=hline,maxsent=maxsent, parcheck=parcheck, sencheck=sencheck,vervang=vervang)
 
