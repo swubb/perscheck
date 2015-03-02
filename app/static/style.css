@@ -140,45 +140,14 @@ TD{font-size: 9pt;}
   max-width: 800px;
 	border:2px solid #4a4b4b;
 
-	-moz-border-radius-bottomleft:9px;
-	-webkit-border-bottom-left-radius:9px;
-	border-bottom-left-radius:9px;
-
-	-moz-border-radius-bottomright:9px;
-	-webkit-border-bottom-right-radius:9px;
-	border-bottom-right-radius:9px;
-
-	-moz-border-radius-topright:9px;
-	-webkit-border-top-right-radius:9px;
-	border-top-right-radius:9px;
-
-	-moz-border-radius-topleft:9px;
-	-webkit-border-top-left-radius:9px;
-	border-top-left-radius:9px;
 }.mytable table{
     border-collapse: collapse;
         border-spacing: 0;
 	width:100%;
 	margin:0px;padding:0px;
-}.mytable tr:last-child td:last-child {
-	-moz-border-radius-bottomright:9px;
-	-webkit-border-bottom-right-radius:9px;
-	border-bottom-right-radius:9px;
 }
-.mytable table tr:first-child td:first-child {
-	-moz-border-radius-topleft:9px;
-	-webkit-border-top-left-radius:9px;
-	border-top-left-radius:9px;
-}
-.mytable table tr:first-child td:last-child {
-	-moz-border-radius-topright:9px;
-	-webkit-border-top-right-radius:9px;
-	border-top-right-radius:9px;
-}.mytable tr:last-child td:first-child{
-	-moz-border-radius-bottomleft:9px;
-	-webkit-border-bottom-left-radius:9px;
-	border-bottom-left-radius:9px;
-}.mytable tr:hover td{
+
+.mytable tr:hover td{
 
 }
 .mytable tr:nth-child(odd){ background-color:#c9c9c9; }
@@ -193,19 +162,10 @@ TD{font-size: 9pt;}
 
 	font-weight:small;
 	color:#4a4b4b;
-}.mytable tr:last-child td{
-	border-width:0px 1px 0px 0px;
-}.mytable tr td:last-child{
-	border-width:0px 0px 1px 0px;
-}.mytable tr:last-child td:last-child{
-	border-width:0px 0px 0px 0px;
 }
-
-
-
 .mytable tr:first-child td{
-		background:-o-linear-gradient(bottom, #4a4b4b 5%, #4a4b4b 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4a4b4b), color-stop(1, #4a4b4b) );
-	background:-moz-linear-gradient( center top, #4a4b4b 5%, #4a4b4b 100% );
+		background:-o-linear-gradient(bottom, #0099FF 5%, ##0099FF 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #0099FF), color-stop(1, #0099FF) );
+	background:-moz-linear-gradient( center top, #0099FF 5%, #0099FF 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#4a4b4b", endColorstr="#4a4b4b");	background: -o-linear-gradient(top,#4a4b4b,4a4b4b);
 
 	background-color:#4a4b4b;

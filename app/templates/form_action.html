@@ -124,7 +124,7 @@
   <p>
   {% for sent in lead %}
     {% if slen[sent] > maxsent %}
-      <font color=red>{{sent}} </font>
+      <span style="background-color: #FFFF00">{{sent}} </span>
     {% else %}
       {{sent}}
     {% endif %}
@@ -136,6 +136,20 @@
 
 </div>
 <br>
+
+<div class="mytable" width=70%>
+              <table >
+                    <tr><td>Ambtelijk taalgebruik</td><td> suggestie</td></tr>
+
+                    {% for word in vervang %}
+                   <tr>
+                     <td> <b>{{word}}</b></td>
+                     <td>{{vervang[word]}}</td>
+                    </tr>
+                    {% endfor %}
+              </table>
+</div>
+
 <br>
 <font size=small>
 
@@ -215,9 +229,9 @@
   <p>
   {% for sent in par %}
     {% if slen[sent] > maxsent %}
-      <font color=red>{{sent}} </font>
+      <span style="background-color: #FFFF00">{{sent|safe}} </span>
     {% else %}
-      {{sent}}
+      {{sent|safe}}
     {% endif %}
 
     {% endfor %}

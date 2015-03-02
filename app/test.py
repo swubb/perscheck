@@ -43,6 +43,15 @@ for line in ins:
    array.append(fields[0])
 ins.close()
 
+#Load dictionary of complicated words and suggestions
+ins = open( "app/static/woordenlijst.txt", "r" )
+dict = {}
+for line in ins:
+    fields = line.rstrip().split(" 1" )
+    if len(fields)>1:
+      dict[fields[0]]="1"+fields[1]
+ins.close()
+
 
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
   return ''.join(random.choice(chars) for _ in range(size))
@@ -99,6 +108,9 @@ def drawGraph(data,randstring,xlabel):
   plt.savefig('app/static/images/generated/'+randstring+'.png')
   plt.clf()
 
+
+
+
 # Define a route for the default URL, which loads the form
 @app.route('/')
 def form():
@@ -123,6 +135,14 @@ def hello():
     parsent=[]
     allwords=[]
     text=request.form['text']
+
+    vervang={}
+    for i in dict:
+      if re.search('\W'+i+'\W', text) :
+        vervang[i] = dict[i]
+        text = re.sub(''+i+'', '<font color=#FF0000><b> '+i+' </b></font>', text)
+      
+
     paragraphs = [s.strip() for s in text.split("\n")]
     count=0
     hline=""
@@ -162,12 +182,17 @@ def hello():
     typetoken=getTTRatio(allwords)
     highfreq=getHighfreq(allwords)
     for w in allwords:
-      wlen[w]=len(w)
+      if '<' not in w:
+        wlen[w]=len(w)
     drawGraph(wlen.values(), randstring2, 'woordlengte')
 
     textlength=len(text)
     allsentences = splitSentences(text)
-    return render_template('form_action.html', lead=parsent[0], text=parsent, slen=slen, sentname=randstring1, wordname=randstring2, ttr=typetoken, hfr=highfreq, textlength=textlength, amountwords=len(allwords),amountsentences=len(allsentences), hline=hline,maxsent=maxsent, parcheck=parcheck, sencheck=sencheck)
+
+
+
+
+    return render_template('form_action.html', lead=parsent[0], text=parsent, slen=slen, sentname=randstring1, wordname=randstring2, ttr=typetoken, hfr=highfreq, textlength=textlength, amountwords=len(allwords),amountsentences=len(allsentences), hline=hline,maxsent=maxsent, parcheck=parcheck, sencheck=sencheck,vervang=vervang)
 
 # Run the app :)
 if __name__ == '__main__':
