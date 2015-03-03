@@ -77,7 +77,7 @@
 <p>
 
 
-
+<h3>Lead</h3>
 <div class="mytable" >
                 <table >
                     <tr>
@@ -137,9 +137,11 @@
 </div>
 <br>
 
+<h3>Ambtelijk taalgebruik</h3>
+
 <div class="mytable" width=70%>
               <table >
-                    <tr><td>Ambtelijk taalgebruik</td><td> suggestie</td></tr>
+                    <tr><td>Gebruikte taal</td><td>Suggestie</td></tr>
 
                     {% for word in vervang %}
                    <tr>
@@ -154,11 +156,11 @@
 <font size=small>
 
 
-
+<h3>Statistieken</h3>
 
 <div class="mytable" width=70%>
               <table >
-                    <tr><td colspan=2>Statistieken</td></tr>
+                    <tr><td colspan=2>Scores</td></tr>
               <tr><td>Lengte artikel:</td> <td>{{textlength}} karakters / {{amountwords}} woorden / {{amountsentences}} zinnen</td></tr>
               <tr><td> Ratio hoog frequente woorden (top 3000): </td>  <td>{{'%0.2f'| format(hfr|float)}}</td></tr>
               <tr><td> type token ratio (cohesie):</td>  <td> {{'%0.2f'| format(ttr|float)}}</td></tr>
@@ -172,6 +174,8 @@
 <br>
 <img src="../static/images/anpbench1.png" width=400px>
 <img src="../static/images/anpbench2.png" width=400px>
+
+<h3>Check per paragraaf</h3>
 
 <div class="mytable" >
                 <table >
@@ -219,7 +223,8 @@
 </font>
 <br>
 <br>
-
+Te lange zinnen zijn gemarkeerd in <span style="background-color: #FFFF00">geel</span>.
+Ambtelijk taalgebruik is aangegeven met <font color=#FF0000><b>rood</b></font>
 <form method="post" action="{{ url_for('hello') }}">
 
 <div result contenteditable='true' align=left>
